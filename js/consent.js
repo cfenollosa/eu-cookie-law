@@ -11,10 +11,9 @@ $(document).ready(function() {
             consentIsSet = c.substring(consentString.length, c.length);
         }
     }
-    console.log("consent="+consentIsSet);
 
     function denyConsent() {
-        console.log("denyConsent");
+        console.log("Consent denied");
         $(cookieBanner).text("You disallowed the use of cookies.");
         $(cookieBanner).fadeOut(5000);
         var d = new Date();
@@ -28,8 +27,8 @@ $(document).ready(function() {
     // Set the cookie and run the consent code
     function setCookie() {
         if (consentIsSet == "true") return;
-        console.log("setCookie");
 
+        console.log("Setting the cookie");
         $(cookieBanner).text("Thank you for accepting cookies.");
         $(cookieBanner).fadeOut(5000);
         var d = new Date();
@@ -44,6 +43,7 @@ $(document).ready(function() {
 
     // Run the consent code
     function doConsent() {
+        console.log("Consent was granted");
         // Currently only one function call, in the future there might be more
         analytics();
     }
@@ -65,7 +65,7 @@ $(document).ready(function() {
         // The two cases where consent is implicit: scrolling the window
         // or clicking a link
 
-        // Don't set cookies on the cookies page on scroll
+        // Don't set cookies on the "cookies page" on scroll
         var pageName = location.pathname.substr(location.pathname.lastIndexOf("/") + 1);
         if (pageName != "cookies.html") $(window).scroll(setCookie);
         $("a:not(.noconsent)").click(setCookie);
