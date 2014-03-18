@@ -4,9 +4,12 @@ Why?
 ----
 
 The EU passed a law some years ago that required all websites to warn about the dangers of cookies. I'm not going to comment
-on it here; if you want my opinion, [please read this blogpost](http://www.agpd.es/portalwebAGPD/canaldocumentacion/publicaciones/common/Guias/Guia_Cookies.pdf)
+on it here; if you want my opinion, [please read this blogpost](http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html)
 
-It is now being enforced and [some people are being fined](http://www.agpd.es/portalwebAGPD/canaldocumentacion/publicaciones/common/Guias/Guia_Cookies.pdf), so it requires urgent action
+It is now being enforced and [some people are being fined](http://www.elperiodico.com/es/noticias/redes/primer-procedimiento-sancionador-espana-por-incumplimiento-ley-cookies-2610349), so it requires urgent action
+
+What does this mean for me?
+---------------------------
 
 What this law means for developers is that some Analytics cookies can't be set unless the user grants consent. Every country has a different interpretation of the EU directive, but in Spain,
 just displaying a "cookie banner" is not enough. **No cookies can be set until the user takes action**. This is a real PITA, especially for small sites.
@@ -47,6 +50,7 @@ To implement it in production
 - All HTML files in your site must include the `cookieBanner` div.
 - All HTML files must include consent.js and jQuery: 
 `<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
 <script src="js/consent.js"></script>`
 - Edit `js/consent.js` and modify:
     - Your analytics code, in `analytics()`
