@@ -43,6 +43,7 @@ Demo
 
 Tip: Chrome does not allow local files to set cookies, so this demo won't work on Chrome.
 
+You can see an online demo [at my own page](http://cfenollosa.com), which uses this same javascript
 
 To implement it in production
 -----------------------------
