@@ -97,3 +97,4 @@ Requirements
 jQuery to detect scrolling and adding listeners to links
 
 
+Pull requests and comments will be very welcome!
