@@ -49,8 +49,7 @@ To implement it in production
 
 - All HTML files in your site must include the `cookieBanner` div.
 - All HTML files must include consent.js and jQuery: 
-`<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-
+`<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script><br/>
 <script src="js/consent.js"></script>`
 - Edit `js/consent.js` and modify:
     - Your analytics code, in `analytics()`
