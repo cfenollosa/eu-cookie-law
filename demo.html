@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="js/consent.js"></script>
+
+        <!-- if you use this in production, integrate this into your CSS -->
+        <style>
+            #cookieBanner {
+                display: none;
+                font-size: 14px;
+                width: 900px;
+                margin: 0px auto;
+                padding: 12px;
+                background-color: #ddd;
+                border-bottom: solid 1px #ccc;
+            }
+
+            #cookieBannerClose {
+                float: right;
+                font-weight: bold;
+                padding: 4px;
+            }
+
+            #cookieBannerActions {
+                text-align: center;
+                padding-top: 4px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="cookieBanner">
+            <div id="cookieBannerClose"><a href="#">x</a></div>
+            This website uses third party cookies exclusively to collect analytics data.
+            If you continue browsing or close this notice, you will accept their use.
+            <div id="cookieBannerActions">
+                <a class="noconsent" href="cookieStatement.html">Learn about this website's cookies</a>
+                &mdash;
+                <a class="denyConsent" href="#">Disallow cookies</a>
+            </div>
+        </div>
+
+        <h2>Why?</h2>
+
+        <p>The EU passed a law some years ago that required all websites to warn about the dangers of cookies. I'm not going to comment
+        on it here; if you want my opinion, <a href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">please read this blogpost</a></p>
+
+        <p>It is now being enforced and <a href="http://www.elperiodico.com/es/noticias/redes/primer-procedimiento-sancionador-espana-por-incumplimiento-ley-cookies-2610349">
+            some people are being fined</a>, so it requires urgent action</p>
+
+        <p>In summary, Analytics cookies can't be set unless the user grants consent. Every country has a different interpretation of the EU directive, but in Spain,
+        just displaying a "cookie banner" is not enough. <b>No cookies can be set until the user takes action</b></p>
+
+        <p>This script helps webmasters track user action. <a href="http://www.agpd.es/portalwebAGPD/canaldocumentacion/publicaciones/common/Guias/Guia_Cookies.pdf">
+            Using the Spanish interpretation</a>, consent is either (page 22 of the PDF)</p>
+        <ol>
+            <li>The user scrolls the webpage, while the notice is visible</li>
+            <li>The user clicks on any link on the page</li>
+        </ol>
+
+        <p>By using this script, webmasters can handle scrolling and clicks.</p>
+
+        <h2>Quick start</h2>
+
+        <p>Download </p>
+
+
+        <h2>How does it work?</h2>
+
+        <p>General idea:</p>
+
+        <ul>
+            <li>All HTML files must include the <code>cookieBanner</code> div, which is hidden by default with CSS. </li>
+            <li><code>js/consent.js</code> (which requires jQuery) will first check if there is a consent cookie.</li>
+            <li>If the cookie is present and grants consent, the banner will stay hidden and the script will execute the <code>doConsent()</code> function.</li>
+            <li>If the cookie is present and denies consent, the banner will stay hidden and no script will be executed</li>
+            <li>If there is no cookie, the banner will be displayed</li>
+        </ul>
+
+
+        <h2>Why?</h2>
+
+    </body>
+</html>
