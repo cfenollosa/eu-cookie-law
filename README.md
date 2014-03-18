@@ -67,9 +67,7 @@ Optional:
 How does it work?
 -----------------
 
-The cookie div is hidden by default with CSS and will be displayed, if needed, by `consent.js`
-
-consent.js:
+The cookie div is hidden by default with CSS and will be displayed, if needed, by `consent.js`. The script:
 
 - Will first check if there is a consent cookie. Otherwise (i.e. first visit of the user) the banner will be displayed.
 - If the cookie grants consent, the script will execute the `doConsent()` function.
@@ -87,11 +85,11 @@ These two actions can be derived from the former:
 - Close the banner, since the user will actually click on a link.
 - Clicking on a link which belongs to the class `allowConsent` will re-set the grant cookie. Useful to grant consent after denying it first.
 
-** Which does not grant consent? **
+**What does not grant consent?**
 
 - Scrolling on a page whose name is `cookies.html`. It is not detailed in the law, but I feel that clicking on the link
 which displays the cookie policy shouldn't be interpreted as granting permission. Feel free to change the name in the code.
-- Clicking on a link which belongs to the class `noconsent`.
+- Clicking on a link which belongs to the class `noconsent`. You can notice that the link to `cookies.html` is one of these.
 
 
 Requirements
