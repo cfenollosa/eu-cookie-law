@@ -48,7 +48,8 @@ To implement it in production
 -----------------------------
 
 - All HTML files in your site must include the `cookieBanner` div.
-- All HTML files must include consent.js and jQuery: 
+- All HTML files must include consent.js and jQuery, which is used to detect scrolling
+and adding listeners to links:
 `<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>`
 `<script src="js/consent.js"></script>`
 - Edit `js/consent.js` and modify:
@@ -90,12 +91,6 @@ These two actions can be derived from the former:
 - Scrolling on a page whose name is `cookies.html`. It is not detailed in the law, but I feel that clicking on the link
 which displays the cookie policy shouldn't be interpreted as granting permission. Feel free to change the name in the code.
 - Clicking on a link which belongs to the class `noconsent`. You can notice that the link to `cookies.html` is one of these.
-
-
-Requirements
-------------
-
-jQuery to detect scrolling and adding listeners to links
 
 
 Pull requests and comments will be very welcome!

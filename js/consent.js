@@ -71,8 +71,8 @@ $(document).ready(function() {
         if (pageName != "cookies.html") $(window).scroll(setCookie);
         $("a:not(.noconsent)").click(setCookie);
         $(".denyConsent").click(denyConset);
-    } else if (consentIsSet == "false") {
         // allow re-enabling cookies
         $(".allowConsent").click(setCookie);
-    } else doConsent();
+    } 
+    else if (consentIsSet == "true") doConsent();
 });
