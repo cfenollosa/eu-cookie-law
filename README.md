@@ -1,6 +1,3 @@
-eu-cookie-law
-=============
-
 Helping webmasters comply with the EU cookie law
 
 Why?
@@ -11,8 +8,8 @@ on it here; if you want my opinion, [please read this blogpost](http://www.agpd.
 
 It is now being enforced and [some people are being fined](http://www.agpd.es/portalwebAGPD/canaldocumentacion/publicaciones/common/Guias/Guia_Cookies.pdf), so it requires urgent action
 
-In summary, Analytics cookies can't be set unless the user grants consent. Every country has a different interpretation of the EU directive, but in Spain,
-just displaying a "cookie banner" is not enough. **No cookies can be set until the user takes action**
+What this law means for developers is that some Analytics cookies can't be set unless the user grants consent. Every country has a different interpretation of the EU directive, but in Spain,
+just displaying a "cookie banner" is not enough. **No cookies can be set until the user takes action**. This is a real PITA, especially for small sites.
 
 This script helps webmasters track user action.
 [Using the Spanish interpretation](http://www.agpd.es/portalwebAGPD/canaldocumentacion/publicaciones/common/Guias/Guia_Cookies.pdf) (page 22), consent is either: 
@@ -20,11 +17,11 @@ This script helps webmasters track user action.
 - The user scrolls the webpage, while the notice is visible
 - The user clicks on any link on the page
 
-By using this script, webmasters can handle scrolling and clicks.
+By using this script, webmasters can add all their cookie-dependent code in just one place: `doConsent()`
 
 
-Quick start
------------
+Demo
+----
 
 1. Clone this project
 2. Open `demo.html` in your browser
@@ -33,18 +30,67 @@ Quick start
 
 Tip: Chrome does not allow local files to set cookies, so this demo won't work on Chrome.
 
+
+To implement it in production
+-----------------------------
+
+- All HTML files in your site must include the `cookieBanner` div.
+- All HTML files must include consent.js and jQuery: 
+`<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="js/consent.js"></script>`
+- Edit `js/consent.js` and modify:
+    - Your analytics code, in `analytics()`
+    - Further actions you wish to do then the user grants content, in `doConsent()`
+
+Optional:
+- Move the `<style>` section into your production CSS file.
+- Change the name of the div on the HTML files and `consent.js`
+- Change the cookie expiry date, currently set to 1 year
+- Remove `console.log()` function calls
+- Edit `cookies.html` as the page name which is safe to browse without giving consent (read below)
+- Change the banner text and links. The default is more or less safe for EU regulations.
+
+
 How does it work?
 -----------------
 
-- All HTML files in your site must include the `cookieBanner` div
-- This div is hidden by default with CSS and will be displayed, if needed, by [consent.js](js/consent.js#L64)
-- `js/consent.js` (which requires jQuery) will first check if there is a consent cookie.
-- If the cookie is present and grants consent, the banner will stay hidden and the script will execute the `doConsent()` function.
-- If the cookie is present and denies consent, the banner will stay hidden and no script will be executed
-- If there is no cookie, the banner will be displayed
+The cookie div is hidden by default with CSS and will be displayed, if needed, by `consent.js`
+
+consent.js:
+
+- Will first check if there is a consent cookie. Otherwise (i.e. first visit of the user) the banner will be displayed.
+- If the cookie grants consent, the script will execute the `doConsent()` function.
+- If the cookie denies consent, no script will be executed.
+
+**How to grant consent?**
+
+The law establishes the following user actions:
+
+- Scroll the page. Feel free to edit the code and add a minimum scrolling length if it is required by your country.
+- Click on a link (which does not belong to the class `noconsent`, see below)
+
+These two actions can be derived from the former:
+
+- Close the banner, since the user will actually click on a link.
+- Clicking on a link which belongs to the class `allowConsent` will re-set the grant cookie. Useful to grant consent after denying it first.
+
+** Which does not grant consent? **
+
+- Scrolling on a page whose name is `cookies.html`. It is not detailed in the law, but I feel that clicking on the link
+which displays the cookie policy shouldn't be interpreted as granting permission. Feel free to change the name in the code.
+- Clicking on a link which belongs to the class `noconsent`.
+
+
+Requirements
+------------
+
+jQuery to detect scrolling and adding listeners to links
 
 
 Disclaimer
 ----------
 
-I am not a lawyer, so take this code with a grain of salt and not as legal advice.
+I am not a lawyer, so this is not legal advice. It is, however, the code I'm using on my site.
+
+The Spanish interpretation of the directive establishes that personal pages which do 
+not offer commercial services are not affected by the law. I, however, prefer to include the banner nevertheless.

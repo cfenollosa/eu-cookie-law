@@ -48,8 +48,9 @@ $(document).ready(function() {
         analytics();
     }
 
+    // Sample usage for doConsent(), which is adding Google Analytics data
+    // Change to match your analytics code
     function analytics() {
-        // Change to match your analytics code
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -69,7 +70,7 @@ $(document).ready(function() {
         var pageName = location.pathname.substr(location.pathname.lastIndexOf("/") + 1);
         if (pageName != "cookies.html") $(window).scroll(setCookie);
         $("a:not(.noconsent)").click(setCookie);
-        $(".denyConsent").click(denyConsent);
+        $(".denyConsent").click(denyConset);
     } else if (consentIsSet == "false") {
         // allow re-enabling cookies
         $(".allowConsent").click(setCookie);
