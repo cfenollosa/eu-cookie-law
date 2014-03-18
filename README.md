@@ -19,6 +19,16 @@ This script helps webmasters track user action.
 
 By using this script, webmasters can add all their cookie-dependent code in just one place: `doConsent()`
 
+Does it affect me?
+------------------
+
+The directive affects all websites which are based in the EU or have a significant amount *(vague legal term)* of 
+visits coming from the EU.
+
+The Spanish interpretation of the directive establishes that personal pages which do 
+not offer commercial services are not affected by the law. I, however, prefer to include the banner nevertheless.
+
+I am not a lawyer, so this is not legal advice.
 
 Demo
 ----
@@ -87,10 +97,3 @@ Requirements
 jQuery to detect scrolling and adding listeners to links
 
 
-Disclaimer
-----------
-
-I am not a lawyer, so this is not legal advice. It is, however, the code I'm using on my site.
-
-The Spanish interpretation of the directive establishes that personal pages which do 
-not offer commercial services are not affected by the law. I, however, prefer to include the banner nevertheless.
