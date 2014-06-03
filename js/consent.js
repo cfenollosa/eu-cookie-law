@@ -70,7 +70,7 @@ $(document).ready(function() {
         var pageName = location.pathname.substr(location.pathname.lastIndexOf("/") + 1);
         if (pageName != "cookies.html") $(window).scroll(setCookie);
         $("a:not(.noconsent)").click(setCookie);
-        $(".denyConsent").click(denyConset);
+        $(".denyConsent").click(denyConsent);
         // allow re-enabling cookies
         $(".allowConsent").click(setCookie);
     } 
