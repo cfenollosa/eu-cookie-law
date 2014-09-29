@@ -95,3 +95,9 @@ which displays the cookie policy shouldn't be interpreted as granting permission
 
 
 Pull requests and comments will be very welcome!
+
+
+Donations
+---------
+
+If this project saved you some time, please [donate to the EFF](https://supporters.eff.org/donate) so they can fight against stupid laws.
