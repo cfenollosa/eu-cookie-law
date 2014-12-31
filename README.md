@@ -61,7 +61,7 @@ Optional:
 - Change the cookie expiry date, currently set to 1 year
 - Remove `console.log()` function calls
 - Edit `cookies.html` as the page name which is safe to browse without giving consent (read below)
-- Change the banner text and links. The default is more or less safe for EU regulations.
+- Change the banner text and links. The default is more or less safe for EU regulations, but IANAL.
 
 
 How does it work?
