@@ -53,9 +53,7 @@ To implement it in production
 and adding listeners to links:
 `<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>`
 `<script src="js/consent.js"></script>`
-- Edit `js/consent.js` and modify:
-    - Your analytics code, in `analytics()`
-    - Further actions you wish to do then the user grants content, in `doConsent()`
+- Edit `js/consent.js` and customize code with any `XXX` comment
 
 Optional:
 - Move the `<style>` section into your production CSS file.
