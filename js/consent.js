@@ -18,6 +18,9 @@ $(document).ready(function() {
 
     function denyConsent() {
         setCookie("Consent denied", "You disallowed the use of cookies.", "false");
+        // Unbind consent-granting actions
+        $(window).unbind("scroll");
+        $("a:not(.noconsent)").unbind("click");
     }
 
     function grantConsent() {
